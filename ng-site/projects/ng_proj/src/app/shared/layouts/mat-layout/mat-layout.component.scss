@@ -23,6 +23,10 @@
         }
     }
 
+    .footer {
+        background-color: $brand-500;
+    }
+
     &.is-mobile {
         overflow: hidden;
         .drawer {

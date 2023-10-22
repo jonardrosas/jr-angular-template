@@ -25,13 +25,6 @@ const routes: Routes = [
         loadChildren: () => import(`../modules/home/home.module`).then((mod) => mod.HomeModule),
         data: { animation: 'HomePage' },
       },
-      /*
-      {
-        path: 'technologies',
-        loadChildren: () =>
-          import(`../modules/technologies/technologies.module`).then((mod) => mod.TechnologiesModule),
-        data: { animation: 'TechnologiesPage' },
-      },
       {
         path: 'contact',
         loadChildren: () => import(`../modules/contact/contact.module`).then((mod) => mod.ContactModule),
@@ -47,7 +40,6 @@ const routes: Routes = [
         loadChildren: () => import(`../modules/projects/projects.module`).then((mod) => mod.ProjectsModule),
         data: { animation: 'ProjectsPage' },
       },
-      */
     ],
   },
   pageNotFound,

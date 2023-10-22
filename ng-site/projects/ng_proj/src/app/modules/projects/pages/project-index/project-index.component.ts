@@ -19,7 +19,7 @@ export class ProjectIndexComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.stateSubscription.unsubscribe();
+    // this.stateSubscription.unsubscribe();
   }
 
   dispatchChildren() {

@@ -18,8 +18,8 @@ export const initialState: HomeState = {
   },
   hero: {
     image: APPCONFIG.heroImage,
-    header: 'Hi,',
-    title: 'I\m Jonard',
+    header: 'Hi, I\'m Jonard',
+    title: '',
     subtitle: '',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fermentum sit amet sapien at imperdiet. Mauris ac est ut massa vulputate mattis et vel risus. Donec ac maximus ex. Praesent sit amet justo vehicula, posuere justo eget, aliquet nunc. ',
     cta: "Discover",
