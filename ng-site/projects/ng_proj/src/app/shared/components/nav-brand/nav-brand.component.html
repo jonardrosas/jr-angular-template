@@ -1,0 +1,4 @@
+<a href="/">
+  <img *ngIf="brand; else elseBlock" @brandAnimate class="profile-image" [src]="brand" alt="Brand" />
+  <ng-template #elseBlock> Branding </ng-template>
+</a>

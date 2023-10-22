@@ -1,0 +1,17 @@
+@import './../../../../styles//scss/main';
+
+.nav {
+    display: flex;
+}
+
+
+.nav {
+    &.is-mobile {
+        flex-direction: column;
+
+
+        button {
+            color: $brand-100;
+        }
+    }
+}
