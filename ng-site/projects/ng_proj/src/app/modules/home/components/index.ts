@@ -1,1 +1,1 @@
-export * from './heros/hero.component'
+export * from './hero/hero.component'

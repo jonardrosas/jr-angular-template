@@ -1,3 +1,4 @@
+import { APPCONFIG } from '../../configs';
 import { HomeState } from '../models/home.interface';
 
 export const initialState: HomeState = {
@@ -16,14 +17,12 @@ export const initialState: HomeState = {
     parent: '',
   },
   hero: {
-    header: '',
-    title: '',
-    hero_title: '',
+    image: APPCONFIG.heroImage,
+    header: 'Hi,',
+    title: 'I\m Jonard',
     subtitle: '',
-    text: '',
-    //text: 'A Full Stack Web Developer. Help me shape your future.',
-    cta: "Let's go",
-    cta2: '',
-    ideasString: "Let's turn your ideas into reality",
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fermentum sit amet sapien at imperdiet. Mauris ac est ut massa vulputate mattis et vel risus. Donec ac maximus ex. Praesent sit amet justo vehicula, posuere justo eget, aliquet nunc. ',
+    cta: "Discover",
+    cta2: 'Hire Me!',
   },
 };

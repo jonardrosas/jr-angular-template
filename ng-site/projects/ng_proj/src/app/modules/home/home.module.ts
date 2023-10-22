@@ -11,10 +11,12 @@ import { reducer } from './store/reducers';
 import { HomeService } from './services';
 
 import { HomeEffects } from './store/effects';
+import { HeroComponent } from './components';
 
 @NgModule({
   declarations: [
     HomePageComponent,
+    HeroComponent
   ],
   imports: [
     CommonModule,

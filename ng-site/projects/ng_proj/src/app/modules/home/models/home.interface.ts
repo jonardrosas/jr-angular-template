@@ -10,10 +10,9 @@ export interface HomeState {
 export interface HeroState {
   header?: string;
   title: string;
-  hero_title: string;
   subtitle: string;
+  image: string;
   text: string;
   cta: string;
   cta2: string;
-  ideasString?: string;
 }

@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HomeState } from './../../models/home.interface';
+import { HeroState } from '../../models/home.interface';
 import { PlatformService } from '../../../../shared/services/platform.service';
 
 @Component({
@@ -14,15 +14,11 @@ export class HeroComponent implements OnInit, OnDestroy, OnChanges {
 
   constructor(private router: Router, private platformService: PlatformService) {}
 
-  ngOnInit(): void {
-  }
+  @Input() data!: HeroState;
+  @Input() pageClass!: string;
 
-  @Input() heroData!: HomeState;
-
-  ngOnChanges(changes: any) {
-  }
-
-  ngOnDestroy(): void {
-  }
+  ngOnChanges(changes: any) {}
+  ngOnInit(): void { }
+  ngOnDestroy(): void {}
 
 }

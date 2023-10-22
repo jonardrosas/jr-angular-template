@@ -6,7 +6,7 @@ import { getLayoutData } from '../../store/actions';
 import { selectInitialData } from './../../store/selector';
 import { Subscription } from 'rxjs';
 import { LayoutState } from '../../models/meta';
-import { MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
+import { MatSidenavContent } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-mat-layout',
@@ -19,7 +19,7 @@ export class MatLayoutComponent implements OnDestroy, OnInit, AfterViewInit {
   public dataSubscription!: Subscription;
   public platformSubscription!: Subscription;
   public mainClass!: string;
-  public toolBarClass: string = 'abc';
+  public toolBarClass: string = '';
   public state!: LayoutState;
   public obj!: string;
   @ViewChild(MatSidenavContent) matSidenavContent!: MatSidenavContent;

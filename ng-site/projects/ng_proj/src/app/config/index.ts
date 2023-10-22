@@ -2,6 +2,7 @@ import { environment } from './../../environments/environment';
 
 export const APPCONFIG = {
   brand: 'assets/img/brand3.png',
+  heroImage: 'assets/img/myprofile.png',
   aiUnderContruction: 'assets/img/ai_under_construction.webp',
 
   navigation: [
