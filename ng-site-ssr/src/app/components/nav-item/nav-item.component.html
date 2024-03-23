@@ -1,3 +1,9 @@
-<div class="container  w-full">
-    <p>nav-item works!</p>
-</div>
+<ul class="flex justify-start pt-10 flex-col mt-20 sm:flex-row sm:h-auto sm:justify-end sm:pt-0 sm:mt-0">
+    @for (menu of menus; track menu.id) {
+    <li class="p-5">
+        <a [routerLink]="menu.path">
+            {{ menu.label }}
+        </a>
+    </li>
+    }
+</ul>

@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Output, Input, EventEmitter } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import {MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrandComponent } from '../brand/brand.component';
 import { NavItemComponent } from '../nav-item/nav-item.component';
+import { MenuItemInterface } from './../../models'
 
 @Component({
   selector: 'app-toolbar',
@@ -13,8 +14,15 @@ import { NavItemComponent } from '../nav-item/nav-item.component';
   styleUrl: './toolbar.component.scss',
 })
 export class ToolbarComponent {
-  @Input() appName!: string; 
+  @Input() appName!: string;
+  @Input() menus!: MenuItemInterface[];
+  @Output() toggle = new EventEmitter();
 
   constructor() {
   }
+
+  toggleBtn() {
+    this.toggle.emit()
+  }
+
 }
