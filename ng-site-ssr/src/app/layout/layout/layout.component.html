@@ -1,10 +1,10 @@
 <mat-drawer-container class="ngsite-container">
-  <mat-drawer #drawer class="" [mode]="mode" [opened]="isOpen">
+  <mat-drawer #drawer class="mt-14" [mode]="mode" [opened]="isOpen">
     <app-nav-item [menus]="menus" />
   </mat-drawer>
   <mat-drawer-content>
-    <app-toolbar [appName]="appName" [menus]="menus" (toggle)="drawer.toggle()"></app-toolbar>
-    <div class="min-h-screen">
+    <app-toolbar #toolbar [appName]="appName" [menus]="menus" (toggle)="drawer.toggle()" />
+    <div class="min-h-screen pt-16">
       <router-outlet></router-outlet>
     </div>
     <app-footer [data]="footerState" />

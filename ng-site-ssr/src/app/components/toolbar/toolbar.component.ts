@@ -5,11 +5,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrandComponent } from '../brand/brand.component';
 import { NavItemComponent } from '../nav-item/nav-item.component';
 import { MenuItemInterface } from './../../models'
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-toolbar',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, BrandComponent, NavItemComponent],
+  imports: [
+    CommonModule, MatToolbarModule,
+    MatButtonModule, MatIconModule,
+    BrandComponent, NavItemComponent
+  ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.scss',
 })
@@ -17,12 +22,18 @@ export class ToolbarComponent {
   @Input() appName!: string;
   @Input() menus!: MenuItemInterface[];
   @Output() toggle = new EventEmitter();
+  public className: string = 'bg-primary'
 
   constructor() {
   }
 
   toggleBtn() {
     this.toggle.emit()
+  }
+
+  test() {
+    this.className = 'bg-accent'
+    console.log(this.className)
   }
 
 }

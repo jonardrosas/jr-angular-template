@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationStart, Router, RouterOutlet } from '@angular/router';
-import { MatDrawer, MatDrawerMode, MatSidenavModule } from '@angular/material/sidenav';
+import { MatDrawer, MatDrawerMode, MatDrawerContent, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
 import { FooterInterface, MenuItemInterface } from '../../models';
@@ -23,6 +23,8 @@ export class LayoutComponent implements OnInit, AfterViewInit {
   public menus: MenuItemInterface[];
   public footerState: FooterInterface;
   @ViewChild('drawer') drawer!: MatDrawer;
+  @ViewChild(MatDrawerContent) matDrawerContent!: MatDrawerContent;
+  @ViewChild(ToolbarComponent) toolbarComponent!: ToolbarComponent;
 
   constructor(private breakpointService: BreakpointService, private route: Router) {
     this.menus = [
@@ -55,13 +57,27 @@ export class LayoutComponent implements OnInit, AfterViewInit {
         this.drawer.close()
       }
     })
-
   }
 
   ngAfterViewInit(): void {
+    this.subscribeBreakpoint();
+    this.subscribeScroll();
+  }
+
+  subscribeBreakpoint() {
     this.breakpointService.isSmallDevice$.subscribe(
       (result) => {
         this.checkDrawerState(result)
+      }
+    )
+  }
+
+  subscribeScroll() {
+    this.matDrawerContent.elementScrolled().subscribe(
+      (event: Event) => {
+        if (event.currentTarget) {
+          console.log(event.currentTarget)
+        }
       }
     )
   }
