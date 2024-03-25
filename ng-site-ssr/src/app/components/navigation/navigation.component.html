@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between">
       <app-brand [appName]="appName" /> {{ className }}
       <div class="hidden md:block w-full">
-        <app-nav-item [menus]="menus" />
+        <app-nav-item [menus]="menus" (themeToggle)="themeToggle.emit()"/>
       </div>
       <div class="md:hidden">
         <button mat-icon-button class="" (click)="toggle.emit()" aria-label="Toggle menu icon">

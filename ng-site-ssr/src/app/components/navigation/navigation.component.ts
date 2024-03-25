@@ -22,6 +22,7 @@ export class NavigationComponent {
   @Input() appName!: string;
   @Input() menus!: MenuItemInterface[];
   @Output() toggle = new EventEmitter();
+  @Output() themeToggle = new EventEmitter();
   @Input() className!: string;
 
 }

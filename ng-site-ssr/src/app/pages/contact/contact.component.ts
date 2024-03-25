@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+  public header = 'Contact Page'
 
 }

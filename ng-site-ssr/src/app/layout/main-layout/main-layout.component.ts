@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { NavigationComponent } from '../../components/navigation/navigation.component';
 import { SideDrawerComponent } from '../../components/side-drawer/side-drawer.component';
-import { FooterInterface, MenuItemInterface, AppState } from '../../models';
+import { FooterInterface, MenuItemInterface, AppState, DARK, MODE } from '../../models';
 import { BreakpointService } from '../../services/platform.service';
 import * as selector from './../../store/main/selector'
 
@@ -24,7 +24,7 @@ export class MainLayoutComponent implements AfterViewInit {
   public footer$: Observable<FooterInterface>;
   public isMobile$: Observable<boolean>;
   public appName = 'assets/brand.png';
-  public mode: string = '';
+  public mode: MODE = '';
   public navigationClass!: string;
   public isOpen = false;
   @ViewChild(CdkScrollable) content!: CdkScrollable;
@@ -59,5 +59,13 @@ export class MainLayoutComponent implements AfterViewInit {
 
   toggleNav() {
     this.isOpen = !this.isOpen;
+  }
+
+  toggleTheme() {
+    if(this.mode == DARK) {
+      this.mode = '';
+    }else {
+      this.mode = 'dark';
+    }
   }
 }

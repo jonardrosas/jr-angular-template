@@ -20,3 +20,7 @@ export interface FooterInterface {
     copyrightLink: string;
     copyrightText: string;
 }
+
+
+export const DARK = 'dark';
+export type MODE = 'dark' | ''
