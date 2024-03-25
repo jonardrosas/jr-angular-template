@@ -1,3 +1,13 @@
+export interface AppState {
+  root: LayoutState;
+}
+
+export interface LayoutState {
+    menus: MenuItemInterface[];
+    footer: FooterInterface;
+    isLoading: boolean;
+    isLoaded: boolean;
+}
 
 export interface MenuItemInterface {
     id: string;

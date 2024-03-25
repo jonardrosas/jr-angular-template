@@ -1,0 +1,20 @@
+<div cdkScrollable class="layout bg-black" [ngClass]="mode">
+    @if(isMobile$ | async) {
+        @if (menus$ | async; as menus ) {
+            <app-side-drawer [menus]="menus" [opened]="isOpen" />
+        }
+    }
+    <div  class="bg-primary-50 dark:bg-primary-900 dark:text-primary-50">
+        @if (menus$ | async; as menus ) {
+            <app-navigation #toolbar [appName]="appName" [menus]="menus" (toggle)="toggleNav()" [className]="navigationClass"/>
+        }
+        <div class="min-h-screen pt-16">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="layout__content__footer">
+            @if (footer$ | async; as footerState ) {
+                <app-footer [data]="footerState" />
+            }
+        </div>
+    </div>
+</div>

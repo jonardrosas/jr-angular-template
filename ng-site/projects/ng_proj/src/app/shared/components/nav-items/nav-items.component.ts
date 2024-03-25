@@ -16,7 +16,7 @@ export interface NavState {
   styleUrls: ['./nav-items.component.scss'],
   animations: [
     trigger('moveLeft', [
-      transition(':enter', animate('500ms', keyframes([
+      transition(':enter', animate('2000ms', keyframes([
         style({opacity: 0, transform: 'translateX(300px)'}),
         style({opacity: .5, transform: 'translateX(150px)'}),
         style({opacity: 1, transform: 'translateX(0px)'}),

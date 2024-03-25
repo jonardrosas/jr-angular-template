@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { LayoutComponent } from './layout/layout/layout.component'
+import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import {
     HomePageComponent, PageNotFoundComponent,
     AboutComponent, ContactComponent, ProductComponent
@@ -8,7 +8,7 @@ import {
 export const routes: Routes = [
     {
         path: '',
-        component: LayoutComponent,
+        component: MainLayoutComponent,
         children: [
             {
                 path: 'home',
