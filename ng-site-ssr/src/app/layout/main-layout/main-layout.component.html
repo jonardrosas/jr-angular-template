@@ -1,4 +1,4 @@
-<div id="layout" cdkScrollable class="max-h-screen min-h-screen h-screen bg-primary-800 overflow-y-auto" [ngClass]="themeMode">
+<div id="layout" cdkScrollable class="max-h-screen min-h-screen h-screen bg-primary-800 overflow-y-auto overflow-x-hidden" [ngClass]="themeMode">
     @if(isMobile$ | async) {
         @if (menus$ | async; as menus ) {
             <app-side-drawer [menus]="menus" [opened]="isOpen" (toggle)="toggleNav()"  (themeToggle)="toggleTheme()" />
@@ -8,7 +8,7 @@
         @if (menus$ | async; as menus ) {
             <app-navigation #toolbar [appName]="appName" [menus]="menus" (toggle)="toggleNav()" (themeToggle)="toggleTheme()" [className]="navigationClass" [themeMode]="themeMode"/>
         }
-        <div id="layout__content__main" class="min-h-screen pt-16 ">
+        <div id="layout__content__main" class="min-h-screen">
             <router-outlet></router-outlet>
         </div>
         <div class="layout__content__footer">

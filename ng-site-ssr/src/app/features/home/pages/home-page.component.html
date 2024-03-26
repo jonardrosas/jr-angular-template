@@ -1,3 +1,5 @@
-<div class="flex p-5 h-screen justify-center items-center container mx-auto bg-primary-100 text-primary-800 dark:bg-primary-800 dark:text-primary-50">
-  <h2 class="text-4xl"> {{ header }} </h2>
+<div class=" bg-primary-100 text-primary-800 dark:bg-primary-800 dark:text-primary-50">
+    @if(heroSection$ | async; as heroSection) {
+      <app-hero-section  [heroSection]="heroSection"/>
+    }
 </div>

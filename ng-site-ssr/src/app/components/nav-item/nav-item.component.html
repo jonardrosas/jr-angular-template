@@ -7,8 +7,8 @@
 </div>
 <ul class="flex justify-start flex-col mt-5 sm:flex-row sm:h-full sm:justify-end sm:pt-0 sm:mt-0 sm:items-center">
     @for (menu of menus; track menu.id) {
-        <li class="p-3 bg-primary-50 mb-1 dark:bg-primary-900">
-            <a class="p-3 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-800" [routerLink]="menu.path">
+        <li class="p-3  mb-1">
+            <a class="p-3 rounded-lg hover:text-primary-800 hover:dark:text-primary-100 hover:bg-primary-100 dark:hover:bg-primary-800" [routerLink]="menu.path">
                 {{ menu.label }}
             </a>
         </li>

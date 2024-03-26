@@ -1,0 +1,9 @@
+<div class="hero relative w-full h-screen overflow-hidden">
+  <img class="hero__image absolute top-0 left-0 w-full h-full object-cover opacity-50" [src]="heroSection.image.src" [alt]="heroSection.image.alt">
+  <div class="hero__content absolute top-0 left-o w-full h-full flex justify-center items-center flex-col gap-5 p-5">
+    <h1 class="text-2xl sm:text-5xl">{{ heroSection.headline }}</h1>
+    <h2 class="text-base sm:text-lg">{{ heroSection.subheadline }}</h2>
+    <p class="text-sm sm:text-lg">{{ heroSection.text }}</p>
+    <a class="bg-primary-accent dark:bg-primary-50 p-3 rounded-lg text-primary-50 dark:text-primary-900" [routerLink]="heroSection.ctaButton.link">{{ heroSection.ctaButton.text }}</a>
+  </div>
+</div>

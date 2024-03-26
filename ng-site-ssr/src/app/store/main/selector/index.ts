@@ -1,8 +1,9 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { LayoutState } from './../../../models'
+import { mainAppKey } from './../reducer'
 
 
-export const selectRoot = createFeatureSelector<LayoutState>('root');
+export const selectRoot = createFeatureSelector<LayoutState>(mainAppKey);
 
 export const selectMenu = createSelector(
   selectRoot,

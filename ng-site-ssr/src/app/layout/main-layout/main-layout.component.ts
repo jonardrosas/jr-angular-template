@@ -25,12 +25,14 @@ export class MainLayoutComponent implements AfterViewInit {
   public isMobile$: Observable<boolean>;
   public appName = 'assets/brand.png';
   public themeMode: MODE = '';
-  public navigationClass!: string;
+  public navigationClass: string;
+  public defaultClass = 'bg-transparent text-primary-800 dark:text-primary-50'
   public isOpen!: boolean;
   @ViewChild(CdkScrollable) content!: CdkScrollable;
 
   constructor(private readonly store: Store, private route: Router, private breakpointService: BreakpointService, private ref: ChangeDetectorRef, private zone: NgZone) {
     this.isMobile$ = this.breakpointService.isSmallDevice$;
+    this.navigationClass = this.defaultClass;
 
     this.route.events.subscribe(event => {
       if (event instanceof NavigationStart) {
@@ -45,9 +47,9 @@ export class MainLayoutComponent implements AfterViewInit {
       () => {
         const offset = this.content.measureScrollOffset('top')
         if(offset > 64) {
-          this.navigationClass = 'opacity-50';
+          this.navigationClass = 'bg-primary-50 dark:bg-primary-900 dark:text-primary-50';
         } else {
-          this.navigationClass = '';
+          this.navigationClass = this.defaultClass;
         }
         this.ref.detectChanges()
       })

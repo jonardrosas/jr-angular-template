@@ -3,6 +3,11 @@ import { LayoutState } from '../../../models/base';
 export const initialState: LayoutState = {
   menus: [
       {
+        id: 'home',
+        label: 'Home',
+        path: 'home',
+      },
+      {
         id: 'products',
         label: 'Products',
         path: 'product',
