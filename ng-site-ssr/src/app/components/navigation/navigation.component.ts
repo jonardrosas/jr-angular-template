@@ -20,9 +20,9 @@ import { MenuItemInterface } from './../../models'
 })
 export class NavigationComponent {
   @Input() appName!: string;
+  @Input() themeMode!: string;
   @Input() menus!: MenuItemInterface[];
   @Output() toggle = new EventEmitter();
   @Output() themeToggle = new EventEmitter();
   @Input() className!: string;
-
 }

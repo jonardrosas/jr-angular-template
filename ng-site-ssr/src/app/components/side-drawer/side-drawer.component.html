@@ -1,5 +1,8 @@
 @if(opened) {
-    <div class="h-screen fixed w-3/5 bg-primary-700 text-primary-50 sm:hidden dark:bg-primary-900" @moveLeft>
-        <app-nav-item [menus]="menus"/>
+    <div class="drawer w-full h-full fixed top-0 left-0 z-10">
+        <div class="overlay absolute top-0 left-0 w-full z-10 bg-primary-300 opacity-50 h-full" (click)="toggle.emit()"></div>
+        <div class="sidenav absolute z-20  top-0 left-0 w-3/4 h-full bg-primary-50 text-primary-900 sm:hidden dark:bg-primary-900 dark:text-primary-50" @moveLeft>
+            <app-nav-item [menus]="menus" (toggleNav)="toggle.emit()" (themeToggle)="themeToggle.emit()"/>
+        </div>
     </div>
 }

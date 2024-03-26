@@ -1,15 +1,13 @@
-<div class="fixed h-16 w-full bg-primary-300 text-primary-900 dark:bg-primary-900 dark:text-primary-50" [ngClass]="className">
-  <div class="container mx-auto px-4">
-    <div class="flex items-center justify-between">
-      <app-brand [appName]="appName" /> {{ className }}
-      <div class="hidden md:block w-full">
-        <app-nav-item [menus]="menus" (themeToggle)="themeToggle.emit()"/>
-      </div>
+<div class="fixed h-16 w-full border-b-primary-300 border-solid border bg-primary-50 text-primary-900 dark:bg-primary-900 dark:text-primary-50 dark:border-b-primary-700" [ngClass]="className">
+  <div class="container mx-auto px-4 h-full">
+    <div class="flex items-center justify-start sm:justify-between h-full">
       <div class="md:hidden">
         <button mat-icon-button class="" (click)="toggle.emit()" aria-label="Toggle menu icon">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
+      <app-brand [appName]="appName" />
+      <app-nav-item class="hidden sm:block w-full" [menus]="menus" (themeToggle)="themeToggle.emit()" [themeMode]="themeMode"/>
     </div>
   </div>
 </div>

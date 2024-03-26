@@ -19,6 +19,13 @@ export interface MenuItemInterface {
 export interface FooterInterface {
     copyrightLink: string;
     copyrightText: string;
+    items: FooterItems[];
+}
+
+export interface FooterItems {
+    id: string;
+    label: string;
+    path: string;
 }
 
 

@@ -1,8 +1,8 @@
-import { createSelector } from '@ngrx/store';
-import { AppState, LayoutState } from './../../../models'
+import { createSelector, createFeatureSelector } from '@ngrx/store';
+import { LayoutState } from './../../../models'
 
 
-export const selectRoot = (state: AppState) => state.root;
+export const selectRoot = createFeatureSelector<LayoutState>('root');
 
 export const selectMenu = createSelector(
   selectRoot,

@@ -21,6 +21,13 @@ export const initialState: LayoutState = {
   footer: {
     copyrightLink: '2024',
     copyrightText: 'Jonard Rosas',
+    items: [
+      {id: 'home', label: 'Home', path: 'home'},
+      {id: 'features', label: 'Features', path: 'feature'},
+      {id: 'about', label: 'About', path: 'about'},
+      {id: 'contact', label: 'Contact', path: 'contact'},
+      {id: 'admin', label: 'Admin', path: 'admin'},
+    ]
   },
   isLoaded: false,
   isLoading: false,

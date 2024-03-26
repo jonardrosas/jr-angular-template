@@ -9,5 +9,4 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
   public header = 'Welcome To Jonard Site'
-
 }

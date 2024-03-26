@@ -1,14 +1,14 @@
-<div id="layout" cdkScrollable class="max-h-screen min-h-screen h-screen bg-primary-800" [ngClass]="mode">
+<div id="layout" cdkScrollable class="max-h-screen min-h-screen h-screen bg-primary-800 overflow-y-auto" [ngClass]="themeMode">
     @if(isMobile$ | async) {
         @if (menus$ | async; as menus ) {
-            <app-side-drawer [menus]="menus" [opened]="isOpen" />
+            <app-side-drawer [menus]="menus" [opened]="isOpen" (toggle)="toggleNav()"  (themeToggle)="toggleTheme()" />
         }
     }
-    <div id="layout__content" class="bg-primary-50 dark:bg-primary-800 dark:text-primary-50">
+    <div id="layout__content"  class="bg-primary-50 dark:bg-primary-800 dark:text-primary-50">
         @if (menus$ | async; as menus ) {
-            <app-navigation #toolbar [appName]="appName" [menus]="menus" (toggle)="toggleNav()" (themeToggle)="toggleTheme()" [className]="navigationClass"/>
+            <app-navigation #toolbar [appName]="appName" [menus]="menus" (toggle)="toggleNav()" (themeToggle)="toggleTheme()" [className]="navigationClass" [themeMode]="themeMode"/>
         }
-        <div id="layout__content__main" class="min-h-screen pt-16">
+        <div id="layout__content__main" class="min-h-screen pt-16 ">
             <router-outlet></router-outlet>
         </div>
         <div class="layout__content__footer">
