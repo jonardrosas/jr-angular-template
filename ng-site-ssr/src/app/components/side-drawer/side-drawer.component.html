@@ -1,6 +1,6 @@
 @if(opened) {
     <div class="drawer w-full h-full fixed top-0 left-0 z-40">
-        <div class="overlay absolute top-0 left-0 w-full z-10 bg-primary-300 opacity-50 h-full" (click)="toggle.emit()"></div>
+        <div class="overlay absolute top-0 left-0 w-full z-10 bg-primary-300 opacity-50 h-full" aria-hidden="true" role="region" (click)="toggle.emit()"></div>
         <div class="sidenav absolute z-20  top-0 left-0 w-3/4 h-full bg-primary-50 text-primary-900 sm:hidden dark:bg-primary-900 dark:text-primary-50" @moveLeft>
             <app-nav-item [menus]="menus" (toggleNav)="toggle.emit()" (themeToggle)="themeToggle.emit()"/>
         </div>

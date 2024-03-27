@@ -1,9 +1,46 @@
-import { createReducer, on } from '@ngrx/store';
-import { initialState } from '../state'
+import { createFeature, createReducer, on } from '@ngrx/store';
 import * as actions from '../action';
 import { LayoutState } from '../../../models';
 
 export const mainAppKey = 'root'
+export const initialState: LayoutState = {
+  menus: [
+      {
+        id: 'home',
+        label: 'Home',
+        path: 'home',
+      },
+      {
+        id: 'products',
+        label: 'Products',
+        path: 'product',
+      },
+      {
+        id: 'about',
+        label: 'About',
+        path: 'about',
+      },
+      {
+        id: 'contact',
+        label: 'Contact',
+        path: 'contact',
+      },    
+  ],
+  footer: {
+    copyrightLink: '© Copyright 2024',
+    copyrightText: 'Jonard Rosas',
+    items: [
+      {id: 'home', label: 'Home', path: 'home'},
+      {id: 'features', label: 'Features', path: 'feature'},
+      {id: 'about', label: 'About', path: 'about'},
+      {id: 'contact', label: 'Contact', path: 'contact'},
+      {id: 'admin', label: 'Admin', path: 'admin'},
+    ]
+  },
+  isLoaded: false,
+  isLoading: false,
+};
+
 
 export const mainAppReducer = createReducer(
     initialState,
@@ -28,3 +65,5 @@ export const mainAppReducer = createReducer(
         isLoaded: true,
     })),
 )
+
+export const mainFeature = createFeature({name: mainAppKey, reducer: mainAppReducer})

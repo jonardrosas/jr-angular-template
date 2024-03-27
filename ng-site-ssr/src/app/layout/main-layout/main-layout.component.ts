@@ -9,7 +9,7 @@ import { NavigationComponent } from '../../components/navigation/navigation.comp
 import { SideDrawerComponent } from '../../components/side-drawer/side-drawer.component';
 import { DARK, MODE } from '../../models';
 import { BreakpointService } from '../../services/platform.service';
-import * as selector from './../../store/main/selector'
+import { mainFeature } from './../../store/main/reducer'
 
 
 @Component({
@@ -20,12 +20,13 @@ import * as selector from './../../store/main/selector'
   styleUrl: './main-layout.component.scss'
 })
 export class MainLayoutComponent implements AfterViewInit {
-  menus$ = this.store.select(selector.selectMenu)
-  footer$ = this.store.select(selector.selectFooterData)
+  menus$ = this.store.select(mainFeature.selectMenus)
+  footer$ = this.store.select(mainFeature.selectFooter)
   public isMobile$: Observable<boolean>;
   public appName = 'assets/brand.png';
   public themeMode: MODE = '';
   public navigationClass: string;
+  public _navigationClass!: string;
   public defaultClass = 'bg-transparent text-primary-800 dark:text-primary-50'
   public isOpen!: boolean;
   @ViewChild(CdkScrollable) content!: CdkScrollable;
@@ -47,11 +48,14 @@ export class MainLayoutComponent implements AfterViewInit {
       () => {
         const offset = this.content.measureScrollOffset('top')
         if(offset > 64) {
-          this.navigationClass = 'bg-primary-50 dark:bg-primary-900 dark:text-primary-50';
+          this._navigationClass = 'bg-primary-50 dark:bg-primary-900 dark:text-primary-50 border-b dark:border-b-0';
         } else {
-          this.navigationClass = this.defaultClass;
+          this._navigationClass = this.defaultClass;
         }
-        this.ref.detectChanges()
+        if(this.navigationClass != this._navigationClass) {
+          this.navigationClass = this._navigationClass;
+          this.ref.detectChanges()
+        }
       })
   }
 

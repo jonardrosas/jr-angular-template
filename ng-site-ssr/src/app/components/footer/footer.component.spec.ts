@@ -16,7 +16,8 @@ describe('FooterComponent', () => {
     component = fixture.componentInstance;
     component.data = {
       copyrightLink: '2024',
-      copyrightText: 'Jonard'
+      copyrightText: 'Jonard',
+      items: []
     }
     fixture.detectChanges();
   });

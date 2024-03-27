@@ -10,5 +10,5 @@ import { HeroSection } from '../../models';
   styleUrl: './hero-section.component.scss'
 })
 export class HeroSectionComponent {
-  @Input() heroSection!: HeroSection;
+  @Input({required: true}) heroSection!: HeroSection;
 }
