@@ -9,5 +9,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './brand.component.scss'
 })
 export class BrandComponent {
-  @Input() appName!: string;
+  @Input() appName!: string | null;
 }

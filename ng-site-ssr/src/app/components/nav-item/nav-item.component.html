@@ -1,23 +1,9 @@
-<div class="sm:hidden bg-primary-50 h-16 flex items-center pl-5 dark:bg-primary-900 dark:text-primary-50">
-    <button (click)="toggleNav.emit()" aria-label="Toggle menu icon">
-        <div class="p-1 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-500" >
-            <mat-icon>menu</mat-icon>
-        </div>
-    </button>    
-</div>
 <ul class="flex justify-start flex-col mt-5 sm:flex-row sm:h-full sm:justify-end sm:pt-0 sm:mt-0 sm:items-center">
     @for (menu of menus; track menu.id) {
         <li class="p-3  mb-1">
-            <a class="p-3 rounded-lg hover:text-primary-800 hover:dark:text-primary-100 hover:bg-primary-100 dark:hover:bg-primary-800" [routerLink]="menu.path">
+            <a class="py-3 px-2 rounded-lg hover:text-primary-800 hover:dark:text-primary-100 hover:bg-primary-100 dark:hover:bg-primary-800" [routerLink]="menu.path">
                 {{ menu.label }}
             </a>
         </li>
     }
-    <li class="p-5">
-        <button (click)="themeToggle.emit()" aria-label="Toggle menu icon">
-            <div class="p-1 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-500" >
-                <mat-icon [fontIcon]="themIcon"></mat-icon>
-            </div>
-        </button>    
-    </li>    
 </ul>

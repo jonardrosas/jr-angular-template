@@ -1,13 +1,13 @@
 <div class="fixed h-16 z-30 w-full" [ngClass]="className">
   <div class="container mx-auto px-4 h-full">
-    <div class="flex items-center justify-start sm:justify-between h-full">
-      <div class="md:hidden">
-        <button mat-icon-button class="" (click)="toggle.emit()" aria-label="Toggle menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-      </div>
+    <div class="flex items-center justify-between gap-5 sm:justify-between h-full">
+      <app-toggle-btn (toggle)="toggle.emit()"/>
       <app-brand [appName]="appName" />
-      <app-nav-item class="hidden sm:block w-full" [menus]="menus" (themeToggle)="themeToggle.emit()" [themeMode]="themeMode"/>
+      <app-nav-item class="hidden sm:flex items-center justify-end w-full" [menus]="menus"/>
+      <div class="flex justify-center items-center gap-5 ml-2">
+        <app-theme-toggle (toggle)="themeToggle.emit()" />
+        <app-profile [userProfile]="userProfile" />
+      </div>
     </div>
   </div>
 </div>

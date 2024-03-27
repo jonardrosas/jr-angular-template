@@ -22,8 +22,9 @@ import { mainFeature } from './../../store/main/reducer'
 export class MainLayoutComponent implements AfterViewInit {
   menus$ = this.store.select(mainFeature.selectMenus)
   footer$ = this.store.select(mainFeature.selectFooter)
+  userProfile$ = this.store.select(mainFeature.selectProfile)
   public isMobile$: Observable<boolean>;
-  public appName = 'assets/brand.png';
+  brand$ = this.store.select(mainFeature.selectBrand)
   public themeMode: MODE = '';
   public navigationClass: string;
   public _navigationClass!: string;

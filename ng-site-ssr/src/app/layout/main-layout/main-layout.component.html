@@ -6,7 +6,7 @@
     }
     <div id="layout__content"  class="bg-primary-50 dark:bg-primary-800 dark:text-primary-50">
         @if (menus$ | async; as menus ) {
-            <app-navigation #toolbar [appName]="appName" [menus]="menus" (toggle)="toggleNav()" (themeToggle)="toggleTheme()" [className]="navigationClass" [themeMode]="themeMode"/>
+            <app-navigation #toolbar [appName]="brand$ | async" [userProfile]="userProfile$ | async" [menus]="menus" (toggle)="toggleNav()" (themeToggle)="toggleTheme()" [className]="navigationClass" [themeMode]="themeMode"/>
         }
         <div id="layout__content__main" class="min-h-screen">
             <router-outlet></router-outlet>

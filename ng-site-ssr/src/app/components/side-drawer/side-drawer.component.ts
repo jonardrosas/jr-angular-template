@@ -1,12 +1,13 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { MenuItemInterface } from '../../models';
 import { NavItemComponent } from '../nav-item/nav-item.component';
+import { ToggleBtnComponent } from '../toggle-btn/toggle-btn.component';
 
 @Component({
   selector: 'app-side-drawer',
   standalone: true,
-  imports: [NavItemComponent],
+  imports: [NavItemComponent, ToggleBtnComponent],
   templateUrl: './side-drawer.component.html',
   styleUrl: './side-drawer.component.scss',
   animations: [
@@ -23,7 +24,8 @@ import { NavItemComponent } from '../nav-item/nav-item.component';
       ]))),
 
     ])
-  ]  
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SideDrawerComponent {
   @Input() menus!: MenuItemInterface[];

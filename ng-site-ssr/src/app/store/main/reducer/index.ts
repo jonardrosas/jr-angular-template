@@ -4,6 +4,7 @@ import { LayoutState } from '../../../models';
 
 export const mainAppKey = 'root'
 export const initialState: LayoutState = {
+  brand: 'assets/brand.png',
   menus: [
       {
         id: 'home',
@@ -26,6 +27,12 @@ export const initialState: LayoutState = {
         path: 'contact',
       },    
   ],
+  profile:  {
+    id: 1,
+    img: 'assets/profile.png',
+    lastName: 'Jonard',
+    firstName: 'Rosas'
+  },
   footer: {
     copyrightLink: '© Copyright 2024',
     copyrightText: 'Jonard Rosas',

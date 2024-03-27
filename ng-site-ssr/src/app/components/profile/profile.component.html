@@ -1,0 +1,11 @@
+@if(userProfile)  {
+    <div class="flex flex-col items-center text-center p-1 cursor-pointer">
+        <img 
+            class="profile-round object-cover rounded-full border border-primary-400 dark:border-primary-700 hover:border-primary-700 dark:hover:border-primary-50"
+            [src]="userProfile.img"
+            width="70"
+            height="70"
+            [title]="userProfile.firstName"
+            alt="Profile Image" />
+    </div>
+}

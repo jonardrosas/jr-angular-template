@@ -3,10 +3,19 @@ export interface AppState {
 }
 
 export interface LayoutState {
+    brand: string | null;
+    profile: ProfileState;
     menus: MenuItemInterface[];
     footer: FooterInterface;
     isLoading: boolean;
     isLoaded: boolean;
+}
+
+export interface ProfileState {
+    img: string;
+    id: number;
+    firstName: string;
+    lastName: string;
 }
 
 export interface MenuItemInterface {
