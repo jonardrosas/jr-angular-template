@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  public baseUrl = '//antcs35089.fab3.tapeout.cso:8081';
+  public baseUrl = ''
 
   constructor(private http: HttpClient) {}
 
