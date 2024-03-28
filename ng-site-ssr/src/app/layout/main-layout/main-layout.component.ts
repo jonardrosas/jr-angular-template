@@ -1,6 +1,6 @@
 import { CdkScrollable, ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild, AfterViewInit, ChangeDetectorRef, NgZone } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -32,7 +32,7 @@ export class MainLayoutComponent implements AfterViewInit {
   public isOpen!: boolean;
   @ViewChild(CdkScrollable) content!: CdkScrollable;
 
-  constructor(private readonly store: Store, private route: Router, private breakpointService: BreakpointService, private ref: ChangeDetectorRef, private zone: NgZone) {
+  constructor(private readonly store: Store, private route: Router, private breakpointService: BreakpointService, private ref: ChangeDetectorRef) {
     this.isMobile$ = this.breakpointService.isSmallDevice$;
     this.navigationClass = this.defaultClass;
 
